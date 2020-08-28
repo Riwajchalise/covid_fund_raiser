@@ -25,14 +25,26 @@ class MailController extends Controller
             $message->to($user->email)->subject('Your Request Has Been Recorded!');
             $message->from('shreya998.ss@gmail.com','Covid Funds');
         });
+        return redirect('/');
+
     }
 
     public function approved($id){
         $user=User::find($id);
-        Mail::send('layouts.requestMail', $user->toArray(), function($message) use ($user){
+        Mail::send('layouts.approvedMail', $user->toArray(), function($message) use ($user){
             $message->to($user->email)->subject('Your Request Has Been Approved!');
             $message->from('shreya998.ss@gmail.com','Covid Funds');
         });
+        return redirect('/main/checklogin');
+    }
+
+    public function rejected($id){
+        $user=User::find($id);
+        Mail::send('layouts.approvedMail', $user->toArray(), function($message) use ($user){
+            $message->to($user->email)->subject('Your Request Has Been Rejected!');
+            $message->from('shreya998.ss@gmail.com','Covid Funds');
+        });
+        return redirect('/main/checklogin');
     }
 
     public function donated($id){
@@ -47,5 +59,6 @@ class MailController extends Controller
             $message->to($user->receiver->email)->subject('Your request has been answered!');
             $message->from('shreya998.ss@gmail.com','Covid Funds');
         });
+        return redirect('/main/checklogin');
     }
 }

@@ -24,6 +24,13 @@ class ReceiverController extends Controller
         $reciever=Receiver::find($request->id);
         $reciever->approval=$request->approval;
         $reciever->save();
+
+        if($reciever->approval=='Approved'){
+            return redirect('/approvedMail/'.$reciever->id);
+        }
+        else{
+            return redirect('/rejectedMail/'.$reciever->id);
+        }
     }
 
 
