@@ -26,6 +26,6 @@ Route::get('logout', 'MainController@logout');
 
 Route::get('/register','MainController@register');
 Route::get('/requestFund','MainController@requestFund');
-Route::post('/donor/store', 'MainController@registerAsDonor');
+Route::post('/donor/store', 'MainController@registerAsDonor')->name('registerAsDonor');
 Route::post('/request/store', 'ReceiverController@store');
 
