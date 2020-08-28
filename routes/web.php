@@ -34,4 +34,4 @@ Route::get('/requestAid/{id}','MailController@requestAid');
 Route::get('/approvedMail/{id}','MailController@approved');
 
 
-Route::post('/request/update', 'ReceiverController@update');
+Route::patch('/request/update', 'ReceiverController@update');
