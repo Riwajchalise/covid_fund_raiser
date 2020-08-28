@@ -61,18 +61,22 @@
     <script>
         $('.approvedStatus').change(function(){
             let id=$(this).attr('data-id');
-            let value=$(this).attr('value');
+            let value=$(this).children("option:selected"). val();
+            console.log(value)
+            console.log(id)
             let fd=new FormData();
             fd.append('id',id);
             fd.append('value',value);
+            fd.append('_token', "{{csrf_token()}}");
+            fd.append('method','PATCH');
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr('content')
                 }
             });
             $.ajax({
-                type: 'POST',
-                url:'/request/update',
+                type: 'PATCH',
+                url:"{{url('/request/update')}}",
                 data: fd,
                 processData: false,
                 contentType: false,
