@@ -25,7 +25,6 @@
             <h1 class="text-center" style="color: white">Register As a Donor</h1>
 
             <form action={{route('registerAsDonor')}} method="post"  class="register-form">
-                @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input name="name" type="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter name">
@@ -33,6 +32,7 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    {{csrf_field()}}
 
                 </div>
                 <div class="form-group">
@@ -47,10 +47,8 @@
                 <a href="/login" >Login</a></p>
             </form>
             </div>
-
         </div>
     </div>
-
 </div>
 </body>
 </html>

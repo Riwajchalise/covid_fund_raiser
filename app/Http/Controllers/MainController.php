@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Donation;
 use App\Receiver;
 use App\User;
 use Illuminate\Http\Request;
@@ -45,7 +46,20 @@ class MainController extends Controller
     function successlogin()
     {
         $receivers=Receiver::all();
-     return view('successlogin',compact('receivers'));
+        $donations=Donation::all();
+        $percentList=[];
+        foreach ($receivers as $receiver)
+        {
+            $amount=0;
+            foreach ($donations as $donation){
+                if ($donation->receiver==$receiver){
+                    $amount+=$donation->amount;
+                }
+            }
+            $percent=($amount/$receiver->amount)*100;
+            array_push($percentList,$percent);
+        }
+        return view('successlogin',compact('receivers','donations','percentList'));
     }
 
     //Function for logging-out
