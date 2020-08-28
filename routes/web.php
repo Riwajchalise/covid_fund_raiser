@@ -35,3 +35,8 @@ Route::get('/approvedMail/{id}','MailController@approved');
 
 
 Route::patch('/request/update', 'ReceiverController@update');
+
+//donated list by euta donor or admin ley herney
+Route::get('/donated','DonorController@list');
+
+//dona
