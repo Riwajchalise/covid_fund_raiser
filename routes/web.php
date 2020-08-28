@@ -29,3 +29,4 @@ Route::get('/requestFund','MainController@requestFund');
 Route::post('/donor/store', 'MainController@registerAsDonor');
 Route::post('/request/store', 'ReceiverController@store');
 
+Route::get('/registrationMail/{id}','MailController@registration');

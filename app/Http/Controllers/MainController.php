@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Receiver;
 use App\User;
 use Illuminate\Http\Request;
 use Validator;
@@ -42,7 +43,8 @@ class MainController extends Controller
 
     function successlogin()
     {
-     return view('successlogin');
+        $receivers=Receiver::all();
+     return view('successlogin',compact('receivers'));
     }
 
     //Function for logging-out
