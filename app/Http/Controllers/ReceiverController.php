@@ -14,7 +14,9 @@ class ReceiverController extends Controller
         $reciever->name=$request->name;
         $reciever->amount=$request->amount;
         $reciever->description=$request->description;
-        $reciever->type=$request->type;
+        // $reciever->type=$request->type;
+        $reciever->type="na";
+        $reciever->email=$request->email;
         $reciever->approval='pending';
         $reciever->save();
         return redirect('/requestAid/'.$reciever->id);

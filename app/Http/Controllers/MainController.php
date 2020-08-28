@@ -24,7 +24,7 @@ class MainController extends Controller
     {
      $this->validate($request, [
       'email'   => 'required|email',
-      'password'  => 'required|alphaNum|min:3'
+      'password'  => 'required'
      ]);
 
      $user_data = array(
@@ -70,7 +70,7 @@ class MainController extends Controller
     }
 
     function registerAsDonor(Request $request){
-        // dd($request->input());
+        //  dd($request->input());
 
         $user=new User();
         $user->name=$request->name;

@@ -27,7 +27,7 @@ Route::get('logout', 'MainController@logout');
 Route::get('/register','MainController@register')->name('registerAsReceiver');
 Route::get('/requestFund','MainController@requestFund');
 Route::post('/donor/store', 'MainController@registerAsDonor')->name('registerAsDonor');
-Route::post('/request/store', 'ReceiverController@store');
+Route::post('/request/store', 'ReceiverController@store')->name('fundReceive');
 
 Route::get('/registrationMail/{id}','MailController@registration');
 Route::get('/requestAid/{id}','MailController@requestAid');

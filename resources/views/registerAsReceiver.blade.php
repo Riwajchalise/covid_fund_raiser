@@ -12,50 +12,50 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<div class="container-fluid khalti-banner">
+    <div class="title">
+    <h5 class="khalti-tag">Payment Partner</h5>
+    </div>
+</div>
 
-<div class="container-fluid fun-req">
-    <div class="layer"></div>
+
+<div class="container-fluid request-wrapper">
+    <h1 class="text-center" style="color: grey; padding-top: 50px">Request Fund</h1>
     <div class="row mx-auto">
 
-            <div class="from-wrapper">
-                <h1 class="text-center" style="color: white">Request Fund</h1>
-                <form action="{{route('registerAsReceiver')}}" class="register-form">
+        <div class="form-wrapper">
+            <form action="{{ route('fundReceive') }}" method="post" class="request-form">
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputName">Name</label>
-                        <input name="" type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter your name">
-                    </div>
+                        <input name="name" type="text" class="form-control form-control-lg" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter name">
 
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input name="email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
                     </div>
                     <div class="form-group">
                         <label for="exampleInputCountry">Country</label>
-                        <input type="text" class="form-control" id="exampleInputCountry" aria-describedby="countryHelp" placeholder="Enter your country">
-
+                        <input name="country" type="text" class="form-control form-control-lg" id="exampleInputCountry" placeholder="Country">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputNumber">Phone Number</label>
-                        <input type="number" class="form-control" id="exampleInputNumber" placeholder="Phone Number">
+                        <input name="phone" type="number" class="form-control form-control-lg" id="exampleInputNumber" placeholder="Enter Khalti ID">
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputDescription" class="form-detail">Description</label>
-                        <select class="form-control form-custom" id="exampleInputDescription">
-                            <option>Organization</option>
-                            <option>Individual</option>
-
-                        </select>
+                        <label for="exampleInputAmount">Amount</label>
+                        <input name="amount" type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="Amount">
                     </div>
-                    <button type="submit" class="btn btn-lg btn-outline-light">Submit</button> &nbsp;
-                </form>
-            </div>
 
-
-
-
+                    <div class="form-group">
+                        <label for="descriptionControlSelect1" class="form-detail">Description</label>
+                        <textarea name="description" class="form-control form-custom" id="" cols="30" rows="8"></textarea>
+                    </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-sub-login">Submit</button> &nbsp;
+            </form>
         </div>
     </div>
 </div>

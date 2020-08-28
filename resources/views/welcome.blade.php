@@ -125,12 +125,15 @@
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
+
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
+            <a href="{{ route('fundReceive') }}">Ask Fund</a>
+            <a href="{{ route('registerAsDonor') }}">Donate</a>
         <header class="navbar">
             
             <a class="navbar-brand" href="#">Covid19 Chart</a>

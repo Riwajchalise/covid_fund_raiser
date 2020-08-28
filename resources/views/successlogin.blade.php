@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 
+    @if (Auth::user()->role_id == 1)
+        I AM ADMIN
+    @else
+
 
     <h3 class="text-center mt-5">People that need your Assistance</h3>
 
@@ -127,4 +131,5 @@
             checkout.show({amount: 1000});
         }
     </script>
+    @endif
 @endsection
