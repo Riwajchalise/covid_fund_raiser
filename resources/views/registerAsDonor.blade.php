@@ -31,8 +31,8 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    {{csrf_field()}}
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
@@ -46,10 +46,8 @@
                 <a href="/login" >Login</a></p>
             </form>
             </div>
-
         </div>
     </div>
-
 </div>
 </body>
 </html>

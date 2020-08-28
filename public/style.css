@@ -8,7 +8,7 @@ body{
 .main-bg{
     background-image: url("img/covid-bg.jpg");
     background-size: cover;
-    height: 850px;
+    height: auto;
     background-position: left;
 
 }
