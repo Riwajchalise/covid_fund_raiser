@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('', function () {
     return view('welcome');
 });
+
+// auth system route
+Route::get('/login', 'MainController@index')->name('login');
+Route::post('/main/checklogin', 'MainController@checklogin');
+Route::get('main/successlogin', 'MainController@successlogin')->middleware('auth')->name('main.successlogin');
+Route::get('logout', 'MainController@logout');
+//end auth system route
