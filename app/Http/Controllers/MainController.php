@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Receiver;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Validator;
 use Auth;
 
@@ -55,7 +56,7 @@ class MainController extends Controller
     }
 
     function registerAsDonor(Request $request){
-        dd($request->input());
+        // dd($request->input());
 
         $user=new User();
         $user->name=$request->name;

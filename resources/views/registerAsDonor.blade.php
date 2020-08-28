@@ -25,13 +25,14 @@
             <h1 class="text-center" style="color: white">Register As a Donor</h1>
 
             <form action={{route('registerAsDonor')}} method="post"  class="register-form">
+                @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input name="name" type="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp" placeholder="Enter name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 
                 </div>
                 <div class="form-group">
