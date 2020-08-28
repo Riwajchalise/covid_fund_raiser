@@ -1,34 +1,39 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <title>Simple Login System in Laravel</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css">
-   .box{
-    width:600px;
-    margin:0 auto;
-    border:1px solid #ccc;
-   }
-  </style>
- </head>
- <body>
-  <br />
-  <div class="container box">
-   <h3 align="center">Covid Fund Tracker</h3><br />
+@extends('layouts.admin')
+@section('content')
 
-   @if(isset(Auth::user()->email))
-    <div class="alert alert-danger success-block">
-     <strong>Welcome {{ Auth::user()->email }}</strong>
-     <br />
-     <a href="{{ url('/logout') }}">Logout</a>
-    </div>
-   @else
-    <script>window.location = "/main";</script>
-   @endif
-   
-   <br />
-  </div>
- </body>
-</html>
+{{--    //if role is donor--}}
+    <table class="table">
+        <thead>
+        <tr>
+            <td>S.No</td>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>Country</td>
+            <td>Description</td>
+            <td>Amount</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($receivers as $receiver)
+            <tr>
+                <td>{{$loop->iterator()}}</td>
+                <td>{{$receiver->name}}</td>
+                <td>{{$receiver->phone}}</td>
+                <td>{{$receiver->country}}</td>
+                <td>{{$receiver->description}}</td>
+                <td>{{$receiver->amount}}</td>
+                <td class="row">
+{{--                    <a href="{{url('/')}}"></a>--}}
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+
+            $('.table').dataTable();
+        });
+    </script>
+@endsection

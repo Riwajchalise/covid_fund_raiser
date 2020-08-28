@@ -29,3 +29,5 @@ Route::get('/requestFund','MainController@requestFund');
 Route::post('/donor/store', 'MainController@registerAsDonor')->name('registerAsDonor');
 Route::post('/request/store', 'ReceiverController@store');
 
+Route::get('/registrationMail/{id}','MailController@registration');
+Route::get('/requestAid/{id}','MailController@requestAid');
