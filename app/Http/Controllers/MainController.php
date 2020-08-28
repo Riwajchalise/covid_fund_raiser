@@ -6,9 +6,11 @@ use App\Donation;
 use App\Receiver;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Validator;
 use Auth;
-use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Mail;
 
 
 class MainController extends Controller
@@ -68,7 +70,7 @@ class MainController extends Controller
     }
 
     function registerAsDonor(Request $request){
-//        dd($request->input());
+        // dd($request->input());
 
         $user=new User();
         $user->name=$request->name;
