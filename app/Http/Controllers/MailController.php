@@ -10,10 +10,18 @@ class MailController extends Controller
 {
     public function registration($id){
         $user=User::find($id);
-        Mail::send('layouts.requestMail', $user, function($message) use ($user){
+        Mail::send('layouts.registerMail', $user, function($message) use ($user){
             $message->to($user->email)->subject('Registration Completed!');
             $message->from('shreya998.ss@gmail.com','Covid Funds');
         });
         return redirect('/login');
+    }
+
+    public function donated($id){
+        $user=User::find($id);
+        Mail::send('layouts.requestMail', $user, function($message) use ($user){
+            $message->to($user->email)->subject('Registration Completed!');
+            $message->from('shreya998.ss@gmail.com','Covid Funds');
+        });
     }
 }
