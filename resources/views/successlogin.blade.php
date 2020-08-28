@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 @section('content')
 
-{{--    //if role is donor--}}
+
+    <h3 class="text-center mt-5">People that need your Assistance</h3>
+
     <table class="table">
         <thead>
         <tr>
@@ -24,7 +26,19 @@
                 <td>{{$receiver->description}}</td>
                 <td>{{$receiver->amount}}</td>
                 <td class="row">
-{{--                    <a href="{{url('/')}}"></a>--}}
+                    <div class="col-md-3">
+                        <form method="post" action="{{url('/request/update')}}">
+                            <input type="hidden" value="{{$receiver->id}}" name="id">
+                            <select name="approval">
+                                <option value="Approved">Approved</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                            {{csrf_field()}}
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                        </form>
+                    </div>
+{{--
+             <a href="{{url('/')}}"></a>--}}
                 </td>
             </tr>
         @endforeach

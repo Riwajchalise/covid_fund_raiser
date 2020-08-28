@@ -31,3 +31,6 @@ Route::post('/request/store', 'ReceiverController@store');
 
 Route::get('/registrationMail/{id}','MailController@registration');
 Route::get('/requestAid/{id}','MailController@requestAid');
+Route::get('/approvedMail/{id}','MailController@approved');
+
+Route::post('/request/update', 'ReceiverController@update');
