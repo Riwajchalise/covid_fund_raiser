@@ -55,11 +55,14 @@ class MainController extends Controller
     }
 
     function registerAsDonor(Request $request){
+        dd($request->input());
+
         $user=new User();
         $user->name=$request->name;
         $user->email=$request->email;
         $user->phone=$request->phone;
-        $user->password=Hash::make('donate123!');
+        $user->role_id="2";
+        $user->password= Hash::make($request->password);
 //        $user->RoleId=
         $user->save();
 
