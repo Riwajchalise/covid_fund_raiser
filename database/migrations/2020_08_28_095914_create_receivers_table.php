@@ -22,6 +22,7 @@ class CreateReceiversTable extends Migration
             $table->string('phone');
             $table->string('type');
             $table->string('approval');
+            $table->string('email');
             $table->integer('amount');
 
         });

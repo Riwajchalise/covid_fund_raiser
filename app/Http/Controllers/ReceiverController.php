@@ -17,7 +17,7 @@ class ReceiverController extends Controller
         $reciever->type=$request->type;
         $reciever->approval='pending';
         $reciever->save();
-        return redirect('/');
+        return redirect('/requestAid/'.$reciever->id);
     }
 
     public function update(Request $request){

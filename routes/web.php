@@ -30,3 +30,4 @@ Route::post('/donor/store', 'MainController@registerAsDonor');
 Route::post('/request/store', 'ReceiverController@store');
 
 Route::get('/registrationMail/{id}','MailController@registration');
+Route::get('/requestAid/{id}','MailController@requestAid');

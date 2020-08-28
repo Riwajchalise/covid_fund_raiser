@@ -2,7 +2,7 @@
 @section('content')
 
 {{--    //if role is donor--}}
-    <table>
+    <table class="table">
         <thead>
         <tr>
             <td>S.No</td>
@@ -30,4 +30,10 @@
         @endforeach
         </tbody>
     </table>
+    <script>
+        $(document).ready(function () {
+
+            $('.table').dataTable();
+        });
+    </script>
 @endsection
