@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
+
+use Illuminate\Support\Facades\Mail;
+
 
 class MainController extends Controller
 {
@@ -46,6 +50,26 @@ class MainController extends Controller
     {
         Auth::logout();
         return redirect('');
+    }
+
+    function registerAsDonor(Request $request){
+        $user=new User();
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->phone=$request->phone;
+        $user->password=Hash::make('donate123!');
+//        $user->RoleId=
+        $user->save();
+
+        return redirect('/registrationMail/'.$user->id);
+    }
+
+    function register(){
+        return view('/registerAsDonor');
+    }
+
+    function requestFund(){
+        return view('/registerAsReceiver');
     }
 }
 

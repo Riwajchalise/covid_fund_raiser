@@ -13,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -24,3 +23,9 @@ Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin')->middleware('auth')->name('main.successlogin');
 Route::get('logout', 'MainController@logout');
 //end auth system route
+
+Route::get('/register','MainController@register');
+Route::get('/requestFund','MainController@requestFund');
+Route::post('/donor/store', 'MainController@registerAsDonor');
+Route::post('/request/store', 'ReceiverController@store');
+
