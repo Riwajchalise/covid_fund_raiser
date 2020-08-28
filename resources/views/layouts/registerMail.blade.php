@@ -4,3 +4,6 @@
 <p> Password: donate123! </p>
 
 <p> Click here to <a href="http://localhost:8000/login">login</a>.</p>
+<br/>
+<p>Regards,</p>
+<p>Covid Fund Tracker</p>
