@@ -1,20 +1,19 @@
-body{
+body {
     /*color: #555;*/
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 1.2em;
     overflow-x: hidden;
 }
 
 /*Register Start*/
-.main-bg{
+.main-bg {
     background-image: url("img/covid-bg.jpg");
     background-size: cover;
     height: 850px;
     background-position: left;
-
 }
 
-.overlay{
+.overlay {
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;
@@ -23,34 +22,32 @@ body{
     height: 850px;
 }
 
-.main-title{
+.main-title {
     color: white;
     padding: 230px 100px 50px;
 }
 
-.register-col{
+.register-col {
     padding: 110px 50px;
     background-color: #efefef;
-
 }
 
-.register-form{
+.register-form {
     padding-top: 60px;
     color: darkcyan;
     margin: 30px auto;
     width: 70%;
 }
 
-
-.fund-register{
+.fund-register {
     width: 50%;
 }
-.register-bg{
-   background-color: dimgrey;
+.register-bg {
+    background-color: dimgrey;
     padding: 50px;
 }
 
-.btn-sub{
+.btn-sub {
     background-color: darkcyan;
     color: white;
     border: none;
@@ -60,81 +57,78 @@ body{
     border-radius: 35px;
 }
 
-.btn-sub:hover{
+.btn-sub:hover {
     background-color: black;
     color: white;
 }
-
 
 /*Register end*/
 
 /*Request Fund start*/
 
-.khalti-banner{
+.khalti-banner {
     background-image: url("img/khalti-banner.jpg");
     background-size: cover;
     height: 60vh;
     background-position: center;
 }
 
-.title{
+.title {
     color: white;
     position: relative;
-
 }
 
-.khalti-tag{
+.khalti-tag {
     position: absolute;
     top: 60%;
     left: 55%;
     padding-top: 300px;
 }
-.request-form{
+.request-form {
     color: darkcyan;
 }
 
-.request-wrapper{
-   background-image: url("img/abstract.png");
+.request-wrapper {
+    background-image: url("img/abstract.png");
     background-size: cover;
     background-position: bottom;
     padding: unset;
 }
 
-.form-wrapper{
+.form-wrapper {
     width: 30%;
     margin: 60px auto;
     border: 1px solid darkcyan;
     padding: 40px;
     background-color: #efefef;
-
 }
 /*Request Fund end*/
 
 /*Login Start*/
-.login-form{
+.login-form {
     width: 70%;
-    margin:40px auto;
+    margin: 40px auto;
 }
 
-.login-form .form-group label{
+.login-form .form-group label {
     color: darkcyan;
 }
 
-.form-col{
+.form-col {
     padding: 50px;
     background-color: #efefef;
 }
 
-.main-title-login{
-    margin-top: 100px;
+.main-title-login {
+    margin-top: -15px;
     color: darkcyan;
 }
 
-.subtitle-login{
+.subtitle-login {
     margin-top: 80px;
 }
 
-.btn-sub-login{
+.btn-sub-login {
     background-color: darkcyan;
     width: 150px;
     height: 60px;
@@ -143,19 +137,20 @@ body{
     margin-left: 140px;
 }
 
-.btn-sub-login:hover{
+.btn-sub-login:hover {
     background-color: dimgrey;
     color: white;
 }
 
-.login-bg{
+.login-bg {
     background-image: url("img/covid-prevention.jpg");
     background-size: cover;
     height: 100vh;
     background-position: center;
 }
 
-.main-wrapper{
+.main-wrapper {
     padding: unset;
+    overflow: hidden;
 }
 /*Login end*/

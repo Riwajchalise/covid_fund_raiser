@@ -41,7 +41,7 @@
            </div>
 
             <div class="col-md-5 form-col">
-                <h1 class="text-center main-title-login">Welcome to Fund Tracker</h1>
+                <h1 class="text-center main-title-login">Welcome to Covid Fund Raiser</h1>
 
                 <h4 class="text-center subtitle-login">Login</h4>
 
