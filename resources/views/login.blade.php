@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -12,54 +11,54 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    @if(isset(Auth::user()->email))
-    <script>window.location="/main/successlogin";</script>
-   @endif
-
-   @if ($message = Session::get('error'))
-   <div class="alert alert-danger alert-block">
-    <button type="button" class="close" data-dismiss="alert">×</button>
-    <strong>{{ $message }}</strong>
-   </div>
-   @endif
-
-   @if (count($errors) > 0)
-    <div class="alert alert-danger">
-     <ul>
-     @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-     @endforeach
-     </ul>
-    </div>
-   @endif
 
 <div class="container-fluid main-wrapper">
     <div class="row mx-auto">
 
-           <div class="col-md-7 login-bg">
+        <div class="col-md-7 login-bg">
 
-           </div>
+        </div>
 
-            <div class="col-md-5 form-col">
-                <h1 class="text-center main-title-login">Welcome to Covid Fund Raiser</h1>
+        <div class="col-md-5 form-col">
+            <h1 class="text-center main-title-login">Welcome to Fund Tracker</h1>
 
-                <h4 class="text-center subtitle-login">Login</h4>
+            <h4 class="text-center subtitle-login">Login</h4>
+            @if(isset(Auth::user()->email))
+                <script>window.location="/main/successlogin";</script>
+            @endif
 
-                <form action="{{ url('/main/checklogin') }}" method="post" class="login-form">
-                    @csrf
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input name="email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
 
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input name="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-<br>
-                    <button type="submit" class="btn btn-lg btn-primary btn-sub-login">Submit</button> &nbsp;
-                </form>
-            </div>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form class="login-form" action="{{ url('/main/checklogin') }}" method="post">
+                @csrf
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-lg btn-primary btn-sub-login">Submit</button> &nbsp;
+            </form>
+        </div>
 
     </div>
 </div>
