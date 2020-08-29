@@ -1,9 +1,6 @@
 @extends('layouts.admin')
 @section('content')
 
-    @if (Auth::user()->role_id == 1)
-        I AM ADMIN
-    @else
 
 
     <h3 class="text-center mt-5">People that need your Assistance</h3>
@@ -40,18 +37,17 @@
                 </td>
                 <td>{{$receiver->amount}}</td>
                 <td>
-                    @if(\Illuminate\Support\Facades\Auth::user())
-
-                            <select name="approval" data-id="{{$receiver->id}}" class="approvedStatus">
-                                <option value="pending" @if($receiver->approval=='pending')selected@else @endif>Pending</option>
-                                <option value="Approved" @if($receiver->approval=='Approved')selected@else @endif>Approved</option>
-                                <option value="Rejected" @if($receiver->approval=='Rejected')selected@else @endif>Rejected</option>
+                        @if (Auth::user()->role_id == 1)
+                            <select name="approval" data-id="{{$receiver->id}}" class="approvedStatus ">
+                                <option value="pending" @if($receiver->approval=='pending')selected @else @endif>Pending</option>
+                                <option value="Approved" @if($receiver->approval=='Approved')selected @else @endif>Approved</option>
+                                <option value="Rejected" @if($receiver->approval=='Rejected')selected @else @endif>Rejected</option>
                             </select>
 {{--                            {{csrf_field()}}--}}
 {{--                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>--}}
 {{--                        </form>--}}
                     @else
-                        <button id="payment-button">Pay with Khalti</button>
+                        <button id="payment-button" class="btn btn-primary">Pay with Khalti</button>
                     </td>
                 @endif
             </tr>
@@ -66,22 +62,21 @@
             console.log(id)
             let fd=new FormData();
             fd.append('id',id);
-            fd.append('value',value);
-            fd.append('_token', "{{csrf_token()}}");
-            fd.append('method','PATCH');
+            fd.append('approval',value);
+            fd.append('_method','POST');
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr('content')
                 }
             });
             $.ajax({
-                type: 'PATCH',
-                url:"{{url('/request/update')}}",
+                type: 'POST',
+                url:"{{route('request.update')}}",
                 data: fd,
                 processData: false,
                 contentType: false,
                 success: function (data) {
-                    window.location.reload();
+                    // window.location.reload();
                     console.log(data)
                 },
                 error: function (data) {
@@ -130,10 +125,8 @@
         var checkout = new KhaltiCheckout(config);
         var btn = document.getElementById("payment-button");
         btn.onclick = function () {
-
             // minimum transaction amount must be 10, i.e 1000 in paisa.
             checkout.show({amount: 1000});
         }
     </script>
-    @endif
 @endsection
