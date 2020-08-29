@@ -14,7 +14,7 @@ class DonorController extends Controller
     {
         if (Auth::user()->role_id === 2) {
 
-            $donatedList = Donation::where('user_id', '=', Auth::user()->id);
+            $donatedList = Donation::where('user_id', Auth::user()->id);
         } else {
             $donatedList = Donation::all();
         }
