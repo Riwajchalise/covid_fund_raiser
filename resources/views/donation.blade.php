@@ -14,7 +14,7 @@
         <tbody>
         @foreach($donatedList as $donation)
             <tr>
-                <td>{{$loop->iterator()}}</td>
+                <td>{{$loop->iteration}}</td>
                 <td>
                     {{$donation->user->name}}
                 </td>

@@ -38,7 +38,7 @@ Route::get('/donated/{id}','MailController@donated');
 Route::post('/request/update', 'ReceiverController@update')->name('request.update');
 
 //donated list by euta donor or admin ley herney
-Route::get('/donor/list','DonorController@list');
-Route::get('/donated','DonorController@donated');
+Route::get('/donor/list','DonorController@list')->middleware('auth');
+Route::get('/donated','DonorController@donated')->middleware('auth');
 
 //dona
