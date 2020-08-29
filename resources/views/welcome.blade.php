@@ -261,17 +261,17 @@
     </head>
     <body>
         @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="container">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <!-- <a href="{{ route('login') }}">Login</a> -->
-                        <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('login') }}'">Login</button>
+                        <button class = "btn1 btn-lg btn-success" onclick = "location.href = '{{ route('login') }}'">Login</button>
 
 
                         @if (Route::has('register'))
                             <!-- <a href="{{ route('register') }}">Register</a> -->
-                        <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('register') }}'">Register</button>
+                        <button class = "btn1 btn-lg btn-success" onclick = "location.href = '{{ route('register') }}'">Register</button>
 
                         @endif
                     @endauth
@@ -279,16 +279,20 @@
             @endif
         
         <div class = "container">
-            <h1>COVID FUND RAISER</h1>
+        <div class="jumbotron">
+                <h1>COVID FUND RAISER</h3>
+                <h3>People need your help!</h3>      
+                 <p>As shown in the graph, the corona virus cases are rising everyday. With the economy so hard struck, there are far more less privileged people who need your help. Please Donate.</p>
+        </div>
         
 
         <header class="navbar">
             <div>
             <!-- <a class="navbar-brand" href="#">Covid19 Chart</a> -->
             <!-- <a href="{{ route('fundReceive') }}">Ask Fund</a> -->
-            <button class = "btn1 btn-lg" onclick = "location.href = '{{ route('fundReceive') }}'">Ask fund</button>
+            <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('fundReceive') }}'">Ask fund</button>
             <!-- <a href="{{ route('registerAsDonor') }}">Donate</a> -->
-            <button class = "btn1 btn-lg" onclick = "location.href = '{{ route('registerAsDonor') }}'">Donate</button>
+            <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('registerAsDonor') }}'">Donate</button>
             </div>
             <div>
             <input id="logarithmic-toggle" type="checkbox" data-toggle="toggle">
