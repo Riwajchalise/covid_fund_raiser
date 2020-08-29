@@ -32,11 +32,13 @@ Route::post('/request/store', 'ReceiverController@store')->name('fundReceive');
 Route::get('/registrationMail/{id}','MailController@registration');
 Route::get('/requestAid/{id}','MailController@requestAid');
 Route::get('/approvedMail/{id}','MailController@approved');
+Route::get('/donated/{id}','MailController@donated');
 
 
-Route::patch('/request/update', 'ReceiverController@update');
+Route::post('/request/update', 'ReceiverController@update')->name('request.update');
 
 //donated list by euta donor or admin ley herney
-Route::get('/donated','DonorController@list');
+Route::get('/donor/list','DonorController@list');
+Route::get('/donated','DonorController@donated');
 
 //dona

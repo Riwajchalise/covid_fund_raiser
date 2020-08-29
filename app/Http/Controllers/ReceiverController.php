@@ -23,6 +23,7 @@ class ReceiverController extends Controller
     }
 
     public function update(Request $request){
+//        dd($request);
         $reciever=Receiver::find($request->id);
         $reciever->approval=$request->approval;
         $reciever->save();

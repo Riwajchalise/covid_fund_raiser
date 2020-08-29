@@ -90,11 +90,11 @@
         cursor: pointer;
         -webkit-font-smoothing: antialiased;
         font-weight: bold !important;
-        
+
         .border-radius(10);
         .transition(all, 50ms, ease);
         .btn(rgb(204, 204, 204), 20%);
-        
+
         }
 
         .btn-primary {
@@ -121,14 +121,14 @@
         text-shadow: none;
         background: none !important;
         .box-shadow(none);
-        &:hover { 
+        &:hover {
             border: 0;
             background: none !important;
             .box-shadow(none);
             top: 0;
         }
-        &:active { 
-            .box-shadow(none); 
+        &:active {
+            .box-shadow(none);
             top: 0;
         }
         }
@@ -138,13 +138,13 @@
             text-shadow: 0px 1px 0px darken(@color, @percent);
             background-color: @color;
             .box-shadow(0px, 6px, 0px, darken(@color, @percent));
-            &:hover { 
+            &:hover {
             border: 0;
             background-color: lighten(@color, 5%) !important;
             .box-shadow(0px, 4px, 0px, darken(@color, @percent));
             }
-            &:active { 
-            .box-shadow(inset, 0px, 3px, 0px, darken(@color, @percent)); 
+            &:active {
+            .box-shadow(inset, 0px, 3px, 0px, darken(@color, @percent));
             }
         }
 
@@ -160,11 +160,11 @@
   cursor: pointer;
   -webkit-font-smoothing: antialiased;
   font-weight: bold !important;
-  
+
   .border-radius(10);
   .transition(all, 50ms, ease);
   .btn(rgb(204, 204, 204), 20%);
-  
+
 }
 
 
@@ -177,14 +177,14 @@
   text-shadow: none;
   background: none !important;
   .box-shadow(none);
-  &:hover { 
+  &:hover {
     border: 0;
     background: none !important;
     .box-shadow(none);
     top: 0;
   }
-  &:active { 
-    .box-shadow(none); 
+  &:active {
+    .box-shadow(none);
     top: 0;
   }
 }
@@ -194,13 +194,13 @@
     text-shadow: 0px 1px 0px darken(@color, @percent);
     background-color: @color;
     .box-shadow(0px, 6px, 0px, darken(@color, @percent));
-    &:hover { 
+    &:hover {
       border: 0;
       background-color: lighten(@color, 5%) !important;
       .box-shadow(0px, 4px, 0px, darken(@color, @percent));
     }
-    &:active { 
-      .box-shadow(inset, 0px, 3px, 0px, darken(@color, @percent)); 
+    &:active {
+      .box-shadow(inset, 0px, 3px, 0px, darken(@color, @percent));
     }
 }
         </style>
@@ -257,6 +257,15 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <style>
+            .box{
+                padding: 2rem 1rem;
+            margin-bottom: 2rem;
+                background-color: #e9ecef;
+                border-radius: .3rem;
+
+            }
+        </style>
 
     </head>
     <body>
@@ -281,12 +290,12 @@
             <a href="{{ route('regD') }}">Register as Donate</a>
          --}}
         <div class = "container">
-        <div class="jumbotron">
-                <h1>COVID FUND RAISER</h3>
-                <h3>People need your help!</h3>      
+        <div class="box">
+                <h1>COVID FUND RAISER</h1>
+                <h3>People need your help!</h3>
                  <p>As shown in the graph, the corona virus cases are rising everyday. With the economy so hard struck, there are far more less privileged people who need your help. Please Donate.</p>
         </div>
-        
+
 
         <header class="navbar">
             <div>
@@ -311,7 +320,7 @@
             <canvas id="coronaChart"></canvas>
         </div>
         </div>
-       
+
     </body>
 </html>
 

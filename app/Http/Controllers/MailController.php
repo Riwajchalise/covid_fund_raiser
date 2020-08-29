@@ -35,7 +35,7 @@ class MailController extends Controller
             $message->to($user->email)->subject('Your Request Has Been Approved!');
             $message->from('shreya998.ss@gmail.com','Covid Funds');
         });
-        return redirect('/main/checklogin');
+        return response()->json('hey');
     }
 
     public function rejected($id){
