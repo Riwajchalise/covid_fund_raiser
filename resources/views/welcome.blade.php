@@ -303,8 +303,8 @@
             <!-- <a href="{{ route('fundReceive') }}">Ask Fund</a> -->
             <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('regD') }}'">Request fund</button>
             <!-- <a href="{{ route('registerAsDonor') }}">Donate</a> -->
-            <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('regR') }}'">Donate</button>
-            <button class = "btn1 btn-lg btn-success" onclick = "location.href = '{{ route('login') }}'">Login</button>
+            <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('regR') }}'">Register</button>
+            <button class = "btn1 btn-lg btn-success" onclick = "location.href = '{{ route('login') }}'">Donate</button>
             </div>
             <div>
             <input id="logarithmic-toggle" type="checkbox" data-toggle="toggle">
