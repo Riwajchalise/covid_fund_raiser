@@ -117,6 +117,7 @@ body {
 .form-col {
     padding: 50px;
     background-color: #efefef;
+    overflow: hidden;
 }
 
 .main-title-login {
@@ -151,6 +152,5 @@ body {
 
 .main-wrapper {
     padding: unset;
-    overflow: hidden;
 }
 /*Login end*/

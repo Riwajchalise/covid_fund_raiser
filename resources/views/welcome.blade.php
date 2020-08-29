@@ -292,7 +292,7 @@
             <div>
             <!-- <a class="navbar-brand" href="#">Covid19 Chart</a> -->
             <!-- <a href="{{ route('fundReceive') }}">Ask Fund</a> -->
-            <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('regD') }}'">Ask fund</button>
+            <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('regD') }}'">Request fund</button>
             <!-- <a href="{{ route('registerAsDonor') }}">Donate</a> -->
             <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('regR') }}'">Donate</button>
             <button class = "btn1 btn-lg btn-success" onclick = "location.href = '{{ route('login') }}'">Login</button>
