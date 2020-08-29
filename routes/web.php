@@ -24,8 +24,8 @@ Route::get('main/successlogin', 'MainController@successlogin')->middleware('auth
 Route::get('logout', 'MainController@logout');
 //end auth system route
 
-Route::get('/register','MainController@register')->name('registerAsReceiver');
-Route::get('/requestFund','MainController@requestFund');
+Route::get('/register','MainController@register')->name('regR');
+Route::get('/requestFund','MainController@requestFund')->name('regD');
 Route::post('/donor/store', 'MainController@registerAsDonor')->name('registerAsDonor');
 Route::post('/request/store', 'ReceiverController@store')->name('fundReceive');
 

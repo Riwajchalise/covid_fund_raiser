@@ -132,8 +132,8 @@
                     @endauth
                 </div>
             @endif
-            <a href="{{ route('fundReceive') }}">Ask Fund</a>
-            <a href="{{ route('registerAsDonor') }}">Donate</a>
+            <a href="{{ route('regR') }}">Ask Fund</a> <br>
+            <a href="{{ route('regD') }}">Register as Donate</a>
         <header class="navbar">
             
             <a class="navbar-brand" href="#">Covid19 Chart</a>
