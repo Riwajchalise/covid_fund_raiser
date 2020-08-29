@@ -61,6 +61,148 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            /* from here  */
+            @import "lesshat";
+
+        body {
+        font-family: 'Montserrat', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        background-color: darken(#428bca, 20%) !important;
+        }
+
+        .true-center {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 106px;
+        width: 690px;
+        }
+
+        .btn {
+        position: relative;
+        border: 0 !important;
+        &:focus { outline: 0; }
+        &:hover { top: 2px; }
+        &:active { top: 6px; }
+        cursor: pointer;
+        -webkit-font-smoothing: antialiased;
+        font-weight: bold !important;
+        
+        .border-radius(10);
+        .transition(all, 50ms, ease);
+        .btn(rgb(204, 204, 204), 20%);
+        
+        }
+
+        .btn-primary {
+        .btn(#428bca);
+        }
+
+        .btn-success {
+        .btn(#5cb85c);
+        }
+
+        .btn-info {
+        .btn(#5bc0de);
+        }
+
+        .btn-warning {
+        .btn(#f0ad4e);
+        }
+
+        .btn-danger {
+        .btn(#d9534f);
+        }
+
+        .btn-link {
+        text-shadow: none;
+        background: none !important;
+        .box-shadow(none);
+        &:hover { 
+            border: 0;
+            background: none !important;
+            .box-shadow(none);
+            top: 0;
+        }
+        &:active { 
+            .box-shadow(none); 
+            top: 0;
+        }
+        }
+
+        .btn(@color, @percent: 10%)  {
+            border: 0;
+            text-shadow: 0px 1px 0px darken(@color, @percent);
+            background-color: @color;
+            .box-shadow(0px, 6px, 0px, darken(@color, @percent));
+            &:hover { 
+            border: 0;
+            background-color: lighten(@color, 5%) !important;
+            .box-shadow(0px, 4px, 0px, darken(@color, @percent));
+            }
+            &:active { 
+            .box-shadow(inset, 0px, 3px, 0px, darken(@color, @percent)); 
+            }
+        }
+
+        /* button added */
+        @import "lesshat";
+
+.btn1 {
+  position: relative;
+  border: 0 !important;
+  &:focus { outline: 0; }
+  &:hover { top: 2px; }
+  &:active { top: 6px; }
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold !important;
+  
+  .border-radius(10);
+  .transition(all, 50ms, ease);
+  .btn(rgb(204, 204, 204), 20%);
+  
+}
+
+
+
+.btn-danger {
+  .btn(#d9534f);
+}
+
+.btn-link {
+  text-shadow: none;
+  background: none !important;
+  .box-shadow(none);
+  &:hover { 
+    border: 0;
+    background: none !important;
+    .box-shadow(none);
+    top: 0;
+  }
+  &:active { 
+    .box-shadow(none); 
+    top: 0;
+  }
+}
+
+.btn1(@color, @percent: 10%)  {
+    border: 0;
+    text-shadow: 0px 1px 0px darken(@color, @percent);
+    background-color: @color;
+    .box-shadow(0px, 6px, 0px, darken(@color, @percent));
+    &:hover { 
+      border: 0;
+      background-color: lighten(@color, 5%) !important;
+      .box-shadow(0px, 4px, 0px, darken(@color, @percent));
+    }
+    &:active { 
+      .box-shadow(inset, 0px, 3px, 0px, darken(@color, @percent)); 
+    }
+}
         </style>
     </head>
     <body>
@@ -123,23 +265,35 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <!-- <a href="{{ route('login') }}">Login</a> -->
+                        <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('login') }}'">Login</button>
 
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <!-- <a href="{{ route('register') }}">Register</a> -->
+                        <button class = "btn1 btn-lg btn-primary" onclick = "location.href = '{{ route('register') }}'">Register</button>
+
                         @endif
                     @endauth
                 </div>
             @endif
-            <a href="{{ route('fundReceive') }}">Ask Fund</a>
-            <a href="{{ route('registerAsDonor') }}">Donate</a>
+        
+        <div class = "container">
+            <h1>COVID FUND RAISER</h1>
+        
+
         <header class="navbar">
-            
-            <a class="navbar-brand" href="#">Covid19 Chart</a>
+            <div>
+            <!-- <a class="navbar-brand" href="#">Covid19 Chart</a> -->
+            <!-- <a href="{{ route('fundReceive') }}">Ask Fund</a> -->
+            <button class = "btn1 btn-lg" onclick = "location.href = '{{ route('fundReceive') }}'">Ask fund</button>
+            <!-- <a href="{{ route('registerAsDonor') }}">Donate</a> -->
+            <button class = "btn1 btn-lg" onclick = "location.href = '{{ route('registerAsDonor') }}'">Donate</button>
+            </div>
+            <div>
             <input id="logarithmic-toggle" type="checkbox" data-toggle="toggle">
             <select id="country-select" class="selectpicker" data-live-search="true" title="Choose a Country..." data-max-options="5">
-
+            </div>
             </select>
         </header>
 
@@ -149,7 +303,7 @@
         <div class="chart-container">
             <canvas id="coronaChart"></canvas>
         </div>
-
+        </div>
        
     </body>
 </html>
